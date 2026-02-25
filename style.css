@@ -11,6 +11,19 @@ body {
     overflow-x: hidden;
 }
 
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: gold;
+    color: #000;
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+.skip-link:focus {
+    top: 10px;
+}
 /* ===== Header ===== */
 .header {
     position: fixed;
@@ -201,6 +214,34 @@ h2 {
 .card h3 {
     margin: 0;
 }
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-text button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5);
+}
+.card:hover,
+.contact-card:hover,
+.hero-text button:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* ===== Accordion ===== */
 .accordion-header {
@@ -247,24 +288,47 @@ h2 {
 }
 
 /* ===== Contact ===== */
+/* ===== Contact Cards like Achievements ===== */
 .contact-card {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 12px;
-    color: gold;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 15px;
-    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    margin: 15px auto;
+    padding: 22px;
+    background: rgba(255, 215, 0, 0.05); /* شفافیت مشابه کارت‌ها */
     border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+    color: gold;
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
+/* Hover effect like Achievements */
 .contact-card:hover {
-    background: rgba(255, 215, 0, 0.1);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.7); /* هاله زرد */
     color: #fff;
 }
-.contact .contact-card{
+
+/* Icon spacing */
+.contact-card i {
+    font-size: 22px;
+    color: gold;
+    transition: color 0.3s;
+}
+
+/* Change icon color on hover */
+/* Contact cards like other cards */
+.contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     width: 100%;
     max-width: 500px;
     margin: 15px auto;
@@ -273,9 +337,29 @@ h2 {
     border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: 14px;
     box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
-    overflow: hidden;
     color: gold;
     font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.contact-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.7); /* هاله زرد */
+    color: #fff;
+}
+
+/* Icon */
+.contact-card i {
+    font-size: 22px;
+    color: gold;
+    transition: color 0.3s ease;
+}
+
+/* Icon color on hover */
+.contact-card:hover i {
+    color: #fff;
 }
 /* ===== Footer ===== */
 .site-footer {
